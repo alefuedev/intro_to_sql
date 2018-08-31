@@ -1,0 +1,37 @@
+*Find all the robots from Star Wars.
+SELECT * FROM Robots WHERE source='Star Wars';
+
+*Find the robot with an "anxious" personality.
+SELECT * FROM Robots WHERE personality='anxious';
+
+*Find all recipes that are nut free.
+SELECT * FROM Recipes WHERE nut_free=true;
+# If we need the number
+SELECT COUNT(*) FROM Recipes WHERE nut_free=true;
+
+*Count the number of recipes that are gluten free but not vegetarian.
+SELECT COUNT(*) FROM Recipes WHERE gluten_free=true AND vegeterian=false;
+
+*Find the animal with the most legs.
+SELECT name FROM Animals ORDER BY number_of_legs DESC LIMIT 1;
+
+*Find the board game that takes the least amount of time to play.
+SELECT name FROM board_games ORDER BY mins_to_play DESC LIMIT 1;
+
+*Find the recipe that takes the most time to prepare.
+SELECT name, minutes_required FROM Recipes ORDER BY minutes_required DESC LIMIT 1;
+
+*Find all the robots whose name starts with the letter M.
+SELECT * FROM Robots WHERE name="m";
+
+*Count the number of board games that can be played by 8 people.
+SELECT name FROM board_games WHERE max_players=8;
+
+*Find all animals that are swimming and egg-laying.
+intro_to_sql=# SELECT name FROM Animals WHERE swimming=true AND egg_laying=true;
+
+*Find all animals that are swimming and egg-laying but not flying.
+SELECT name FROM Animals WHERE swimming=true AND egg_laying=true AND flying=false;
+
+*Find the board game that supports the largest number of people.
+SELECT name FROM board_games ORDER BY max_players DESC LIMIT 1;

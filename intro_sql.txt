@@ -1,0 +1,77 @@
+SQL
+#To log in into psql
+psql
+#QUIT
+\q
+
+#To check the rols
+\du
+
+#Create a new role, use ; at the end
+create role name_of_the user;
+
+#Create a DataBase
+createdb name_of_the_data_base
+
+#Seed or database
+name_of_the_empty_database < name_of_the_file
+
+#DROP DATABASE
+dropdb name_of_the_database
+
+#DROP USER
+dropuser name_of_user
+
+QUERYS
+
+#This means select all from the table with the name
+SELECT * FROM name_of_the_table
+
+#This will help us to look into the table and select only the rows CustomerName and City
+SELECT CustomerName,City FROM name_of_the_table
+
+#This will not show duplicates of the same
+SELECT DISTINCT Country FROM name_of_the_table 
+
+#This will the number
+SELECT COUNT(DISTINCT Country) From name_of_table
+
+@@ WHERE @@
+#We use it to filter
+#If we need to look for a boolean or integer we don't need to use the quotes ''
+#This will show all where the country is equal to Spain
+SELECT * FROM name_of_the_table WHERE Country='Spain'
+
+@@ WHERE + AND @@ 
+@@ && @@
+SELECT * FROM Table WHERE happy=true AND SMILE=true;
+
+@@ WHERE + OR @@
+@@ || @@
+SELECT * FROM Costumers WHERE City='NY' OR City='LA'; 
+
+@@ WHERE + NOT @@
+@@ != @@
+SELECT * FROM Costumers WHERE NOT Country='NY';
+
+@@ ORDER BY @@
+#This will order the results
+SELECT * FROM Coutumers ORDER BY Country;
+#We can use 2 parameters 
+SELECT * FROM Costumers ORDER BY Country,CostumerName;
+
+@@ INSERT INTO @@
+#To Inset a Value into one of the Tables
+INSERT INTO Costumers (CostumerName,PhoneNumber,Email)VALUES("John P.","123456","johnp@randomeamil.com");
+
+@@ LIMIT 1 @@
+#This will give us only one result 
+SELECT name FROM Animals ORDER BY number_of_legs DESC LIMIT 1;
+
+@@ LIKE @@
+#This work help us to get a value with some input
+SELECT name FROM Robots WHERE name LIKE 'EV%';
+EV01
+EV02
+EV03
+
